@@ -19,8 +19,8 @@ Object.keys(coronaData).forEach((patient) => {
     ];
     lineCoords.push(coos);
     const mrk = L.circleMarker(coos, {
-      radius: 7,
-      weight: 1,
+      radius: 9,
+      weight: 2,
       color: patCol,
       fillColor: patCol,
       fillOpacity: 0.3,
@@ -29,7 +29,7 @@ Object.keys(coronaData).forEach((patient) => {
     mrk.addTo(stopsGrp);
   });
   L.polyline(lineCoords, { // spojnice
-    weight: 2,
+    weight: 3,
     color: patCol,
   }).addTo(stopsGrp);
 });
