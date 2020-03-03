@@ -26,6 +26,12 @@ Object.keys(coronaData).forEach((patient) => {
       fillOpacity: 0.3,
     });
     mrk.bindPopup(`<b>${patient}</b><br>${stop[0]}, ${stop[1].replace('2020', '')}<br>${stop[2]}`);
+    mrk.on('mouseover', function(e) {
+      this.openPopup();
+    });
+    mrk.on('mouseout', function(e) {
+      this.closePopup();
+    });
     mrk.addTo(stopsGrp);
   });
   L.polyline(lineCoords, { // spojnice
